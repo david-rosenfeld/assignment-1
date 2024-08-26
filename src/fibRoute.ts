@@ -3,8 +3,9 @@
 import fibonacci from "./fib";
 
 export default (req, res) => {
-  const { num } = req.params;
+  const { num }: {num: string} = req.params as {num: string};
 
+  // The parseInt function converts a string to an integer.
   const fibN = fibonacci(parseInt(num));
   let result = `fibonacci(${num}) is ${fibN}`;
 
